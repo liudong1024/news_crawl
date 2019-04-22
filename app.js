@@ -1,0 +1,34 @@
+"use strict";
+let CronJob = require('cron').CronJob;
+let toutiaoapp = require("./toutiaoapp");
+let toutiaoapp_auto = require("./toutiaoapp_auto");
+let toutiaoapp_ent = require("./toutiaoapp_ent");
+let toutiaoapp_fashion = require("./toutiaoapp_fashion");
+let toutiaoapp_finance = require("./toutiaoapp_finance");
+let toutiaoapp_game = require("./toutiaoapp_game");
+let toutiaoapp_health = require("./toutiaoapp_health");
+let toutiaoapp_sports = require("./toutiaoapp_sports");
+let toutiaoapp_tech = require("./toutiaoapp_tech");
+let toutiaoapp_travel = require("./toutiaoapp_travel");
+let toutiaoapp_history = require("./toutiaoapp_history");
+let toutiaoapp_parenting = require("./toutiaoapp_parenting");
+let toutiaoapp_essay = require("./toutiaoapp_essay");
+let toutiaoapp_delicacy = require("./toutiaoapp_delicacy");
+new CronJob('*/60 * * * * *', function (){
+    toutiaoapp();
+    toutiaoapp_travel();
+    toutiaoapp_ent();
+    toutiaoapp_auto();
+    toutiaoapp_fashion();
+    toutiaoapp_game();
+    toutiaoapp_finance();
+    toutiaoapp_health();
+    toutiaoapp_sports();
+    toutiaoapp_tech();
+    toutiaoapp_history();
+    toutiaoapp_parenting();
+    toutiaoapp_essay();
+    toutiaoapp_delicacy();
+}, null, true, "Asia/Shanghai");
+
+console.log("今日头条爬虫 module is running");
